@@ -1,0 +1,91 @@
+OUTPUTS FOR cmd:
+
+turtle$ cmd ls
+.              1 1 512
+..             1 1 512
+README         2 2 2290
+my_siblings    2 3 13760
+helloxv6       2 4 12252
+head           2 5 13832
+cmd            2 6 12840
+cat            2 7 13444
+echo           2 8 12520
+forktest       2 9 8232
+grep           2 10 15272
+init           2 11 13112
+kill           2 12 12560
+ln             2 13 12472
+ls             2 14 14688
+mkdir          2 15 12588
+rm             2 16 12564
+sh             2 17 23212
+stressfs       2 18 13240
+usertests      2 19 56124
+wc             2 20 14100
+zombie         2 21 12296
+console        3 22 0
+
+turtle$ cmd echo hello
+hello
+
+turtle$ cmd ls | grep c
+cmd            2 6 12840
+cat            2 7 13444
+echo           2 8 12520
+wc             2 20 14100
+console        3 22 0
+
+turtle$ cmd head 3 README
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+Version 6 (v6).  xv6 loosely follows the structure and style of v6,
+but is implemented for a modern x86-based multiprocessor using ANSI C.
+
+
+
+
+
+
+
+OUTPUTS FOR head:
+
+turtle$ head 5 README
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+Version 6 (v6).  xv6 loosely follows the structure and style of v6,
+but is implemented for a modern x86-based multiprocessor using ANSI C.
+
+ACKNOWLEDGMENTS
+
+
+
+
+
+
+
+OUTPUTS FOR hello:
+
+turtle$ helloxv6     
+Hi! Welcome to the world of xv6!
+
+
+
+
+
+
+
+OUTPUTS FOR my_siblings:
+
+turtle$ my_siblings 6 1 2 1 0 2 0
+18 RUNNING
+19 ZOMBIE
+20 RUNNING
+21 SLEEPING
+22 ZOMBIE
+23 SLEEPING
+
+turtle$ my_siblings 6 1 1 2 2 0 0
+26 RUNNING
+27 RUNNABLE
+28 ZOMBIE
+29 ZOMBIE
+30 SLEEPING
+31 SLEEPING
