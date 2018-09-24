@@ -1,0 +1,2 @@
+$ counter_with_locks
+20000$

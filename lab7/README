@@ -1,0 +1,20 @@
+CS 333 (Lab 7)
+160050107
+
+Answers to Part 0
+
+(i)
+Function for obtaining the spinlock : acquire
+Function for releasing the spinlock : release
+
+(ii)
+holding() function checks whether the cpu is holding the lock specified as the argument or not
+
+(iii)
+A call to the holding function with a subsequent panic call is being called as a part of the second acquire(&ptable.lock) call in the userinit() function in proc.c.
+When the same CPU is trying to acquire the same lock without releasing it the it would result in a panic.
+
+(v) 
+sti() sets the interrupt flag which resumes servicing interrupts whereas a cli() call clears the interrupt flag so that no interrupt will be serviced.
+Hence, if a sti() call is added just after acquire and a cli() just before release() then it will lead to a kernel panic. This is because sti() enables interrupts due to which if there is an interrupt which uses the same lock as the lock which was locked using acquire() resulting in a panic.
+Similarly a panic for cli() call in such a case.
