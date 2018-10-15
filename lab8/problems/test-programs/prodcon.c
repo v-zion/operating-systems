@@ -63,29 +63,24 @@ int read_inputfile(char *filename, char *actions, int *sleeptimes)
 
 void produce(void)
 {
-	acquire_mutex_spinlock(0);
-	while (get_mutex_value(0) == MAX_LIMIT)
-		cond_wait(1, 0);
+	//   ...
+	//   ...
 
-	if (get_mutex_value(0) < 10 && get_mutex_value(0) >= 0) {
-		set_mutex_value(0, get_mutex_value(0) + 1);
-		printf(1, "[%d]: Produced an item. Curernt buffer size: %d\n", getpid(), get_mutex_value(0));
-		cond_signal(1);
-		release_mutex_spinlock(0);
-	}
+	//  printf(1, "[%d]: Produced an item. Curernt buffer size: %d\n", getpid(), get_mutex_value(0));
+
+	//   ...
+	//   ...
 }
 
 void consume(void)
 {
-	acquire_mutex_spinlock(0);
-	while (get_mutex_value(0) == 0)
-		cond_wait(1, 0);
-	if (get_mutex_value(0) <= 10 && get_mutex_value(0) > 0) {
-		set_mutex_value(0, get_mutex_value(0) - 1);
-		printf(1, "[%d]: Consumed an item. Curernt buffer size: %d\n", getpid(), get_mutex_value(0));
-		cond_signal(1);
-		release_mutex_spinlock(0);
-	}
+	//   ...
+	//   ...
+
+	//  printf(1, "[%d]: Consumed an item. Curernt buffer size: %d\n", getpid(), get_mutex_value(0));
+
+	//   ...
+	//   ...
 }
 
 int main(int argc, char *argv[])
