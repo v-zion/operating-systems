@@ -1,0 +1,10 @@
+$ sigtest5
+ 
+Signal handler 1 invoked !!!. signal type: 5 
+ 
+Signal handler 1 invoked !!!. signal type: 10 
+ 
+Signal handler 1 invoked !!!. signal type: 1 
+Signal handler 2 invoked !!!. signal type: 11 
+Signal handler 2 invoked !!!. signal type: 1 
+$ 
